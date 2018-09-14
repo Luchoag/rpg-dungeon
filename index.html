@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Classic RPG Dungeon</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="RPG JS.js"></script>
+        <link rel="stylesheet" type="text/css" href="RPG Style.css" />
+    </head>
+    <body>
+
+    <h1>Classic RPG</h1>
+    <div id="actions">
+      <div id="mainButtons">
+        <button id="movebtn" onclick="onMove()">Move</button>
+        <button id="lookbtn" onclick="look()">Look</button><br>
+        <button id="restbtn" onclick="rest()">Rest</button><br>
+        <button id="takebtn" onclick="takePotion()">Take</button><br>
+        <button id="inventorybtn" onclick="checkInventory()">Inventory</button><br>
+        <button id="mapbtn" onclick="lookMap()">Map</button><br>
+        <button id="statusbtn" onclick="status()">Status</button><br>
+      </div>
+      <div id="combatButtons">
+        <button id="attackbtn" onclick="attack()">Attack</button>
+        <button id="stealbtn" onclick="steal1()">Steal</button>
+        <button id="spellbtn" onclick="castSpell()">Cast Spell</button>
+        <button id="runbtn" onclick="escape1()">Run</button>
+      </div>
+      <div id="directionButtons">
+        <button id="northbtn" onclick="moveNorth();directions()">North</button>
+        <button id="eastbtn" onclick="moveEast();directions()">East</button>
+        <button id="southbtn" onclick="moveSouth();directions()">South</button>
+        <button id="westbtn" onclick="moveWest();directions()">West</button>
+        <button id="cancelbtn" onclick="onCancel()">Cancel</button>
+      </div>
+      <div id="magicButtons">
+        <button id="fireball" onclick="fireball()">Fireball</button>
+        <button id="lightning" onclick="lightning()">Lightning</button>
+        <button id="cancel2btn" onclick="onCancel2()">Cancel</button>
+      </div>
+    </div>
+    <div id="userinputs">
+      <form id="formu" onsubmit="return false">
+        <label>Enter your name:</label>
+        <input id="user" type="text" placeholder="Character Name" required><br>
+        Select your class:<br>
+        <input type="radio" name="classe" value="fighter" checked>Fighter<br>
+        <input type="radio" name="classe" value="thief">Thief<br>
+        <input type="radio" name="classe" value="mage">Mage<br>
+        <input id="submit" type="submit" value="Submit" onclick="validateName()" />
+      </form>
+    </div>
+    <div id="lifeDiv"></div>
+    <br><br>
+        <center>
+        <table id="map" border="0" cellspacing="10">
+         <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+         <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+         <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+         <tr><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+     </table>
+   </center>
+
+
+    </body>
+</html>

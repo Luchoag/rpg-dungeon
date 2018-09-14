@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+}
+
+body {
+    background: -moz-radial-gradient(circle, #8B6742, black); 
+    background: -webkit-radial-gradient(circle, #8B6742, black); 
+    background: -ms-radial-gradient(circle, #8B6742, black);
+    width:310px;
+    height:500px;
+}
+
+h1 {
+    color:red;
+    font-size:medium;
+    text-align:center;
+}
+
+hr {
+    display:block;
+}
+
+#actions {
+    color: red;
+    vertical-align: bottom;
+    width:70px;
+    height:294px;
+    border: 2px solid brown;
+    display: inline-block;
+}
+
+#userinputs {
+    width:228px;
+    height:294px;
+    vertical-align: bottom;
+    border: 2px solid brown;
+    color:#87CEFA;
+    display:inline-block;
+    overflow:auto;
+    outline:0;
+}
+
+#user {
+    width:150px;
+}
+
+
+button {
+    width:70px;
+    height:42px;
+    background: -webkit-radial-gradient(circle, #DEB887, #8B6742);
+    background: -moz-radial-gradient(circle, #DEB887, #8B6742);
+    background: -ms-radial-gradient(circle, #DEB887, #8B6742);
+    outline:0;
+}
+
+input {
+    outline:0;
+}
+
+#mainButtons {
+    display: block;
+}
+#combatButtons {
+    display: none;
+}
+
+#directionButtons {
+    display: none;    
+}
+
+#submit {
+    border-radius:5px
+}
+
+#formu {
+    display: block;
+}
+
+#lifeDiv {
+    width: 305px;
+    height: 20px;
+    color:#87CEFA;
+    text-align: center;
+    display: none;
+    border: 2px solid brown;
+    border-radius: 5px;
+}
+
+#fwdButn {
+    border-radius:100px;
+    width: 30px;
+    height: 30px;
+}
+
+#fireball {
+    display: none;
+    background: -webkit-radial-gradient(circle, yellow, red);
+    background: -moz-radial-gradient(circle, yellow, red);
+}
+
+#lightning {
+    display: none;
+    background: -webkit-linear-gradient(left top, yellow, white, yellow, white, yellow);
+    background: -moz-linear-gradient(left top, yellow, white, yellow, white, yellow);
+}
+
+#cancel2btn {
+    display: none;
+}
+
+#potionBtn {
+    background: -webkit-radial-gradient(circle, white, green);
+    background: -moz-radial-gradient(circle, white, green);
+    border-radius: 10px;
+}
+
+#map {
+    display: none;
+    border: 2px solid brown;
+    border-radius: 5px;
+    color: white;
+    empty-cells: hide;
+}
+
+td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid gray;
+}
