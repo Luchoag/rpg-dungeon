@@ -120,11 +120,12 @@ input {
     border: 2px solid brown;
     border-radius: 5px;
     color: white;
-    empty-cells: hide;
 }
 
 td {
-    width: 30px;
-    height: 30px;
-    border: 1px solid gray;
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    color: black;
+    font-family: "American Typewriter", serif
 }
