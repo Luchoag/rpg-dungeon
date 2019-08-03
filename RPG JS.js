@@ -26,6 +26,7 @@ window.onload = function() {
 function init() {
   textBox=document.getElementById("userinputs");
   botonesMain=document.getElementById("mainButtons");
+  writeMap();
 }
 
 function player () {
@@ -264,6 +265,7 @@ function changeRoom(newRoom) {
   potionInRoom=false;
   currentRoom=newRoom;
   look();
+  writeMap();
   appearPotion();
   combat();
 }
@@ -959,6 +961,7 @@ function takePotion() {
     textBox.innerHTML="You pick up a potion from the floor.";
     inventory[0]=true;
     p1.numberOfPotions+=1;
+    !potionInRoom;
   } else {
     textBox.innerHTML="There's nothing to take here!";
   }
@@ -1013,7 +1016,7 @@ function gameOver() {
   document.getElementById("restbtn").disabled = true;
   document.getElementById("takebtn").disabled = true;
   document.getElementById("inventorybtn").disabled = true;
-  document.getElementById("statusbtn").disabled = true;
+  //document.getElementById("statusbtn").disabled = true;
   disableCombatButtons();
   textBox.innerHTML=p1.name+" fought until the end trying to find his way out of the maze."
   if (e1.clase=="Bat") {
@@ -1043,62 +1046,66 @@ function gameOver() {
   textBox.appendChild(par3);
 }
 
-var blinkInterval = null;
+function writeMap() {
+    var currentCell=null;
+    switch (currentRoom) {
+    case 1:
+      currentCell=map.rows[3].cells[2];
+      break;
+    case 2:
+      currentCell=map.rows[2].cells[2];
+      break;
+    case 3:
+      currentCell=map.rows[2].cells[3];
+      break;
+    case 4:
+      currentCell=map.rows[2].cells[4];
+      break;
+    case 5:
+      currentCell=map.rows[3].cells[4];
+      break;
+    case 6:
+      currentCell=map.rows[3].cells[5];
+      break;
+    case 7:
+      currentCell=map.rows[2].cells[1];
+      break;
+    case 8:
+      currentCell=map.rows[2].cells[0];
+      break;
+    case 9:
+      currentCell=map.rows[3].cells[0];
+      break;
+    case 10:
+      currentCell=map.rows[1].cells[2];
+      break;
+    case 11:
+      currentCell=map.rows[1].cells[1];
+      break;
+    case 12:
+      currentCell=map.rows[0].cells[1];
+      break;
+    case 13:
+      currentCell=map.rows[0].cells[0];
+      break;      
+  }
+  for (i=0; i<4; i++) {
+    for (j=0; j<6; j++) {
+      map.rows[i].cells[j].innerHTML="";
+    } 
+  }
+  currentCell.style.border="1px solid brown";
+  currentCell.style.backgroundColor="#DEB887"
+  currentCell.innerHTML="X";
+}
 
-function lookMap() {
-  
-  clearInterval(blinkInterval);
+function lookMap() { 
   var map2=document.getElementById("map");
-  var mapa=document.getElementsByTagName("td");
-  var currentCell=null;
-
+  //Shows or hides map
   if (map2.style.display=="block") {
     map2.style.display="none";  
   } else {
     map2.style.display="block";
   }
-  
-  switch (currentRoom) {
-    case 1:
-      currentCell=mapa[20];
-      currentCell.style.display="block";
-      blinkInterval = setInterval(blinkCell.bind(null, currentCell), 800);
-      break;
-    case 2:
-      currentCell=mapa[21];
-      currentCell.style.display="block";
-      blinkInterval = setInterval(blinkCell.bind(null, currentCell), 800);
-      break;
-    case 3:
-      currentCell=mapa[14];
-      currentCell.style.display="block";
-      blinkInterval = setInterval(blinkCell.bind(null, currentCell), 800);
-      break;
-    case 4:
-      currentCell=map.rows[2].cells[4];
-      currentCell.style.display="block";
-      blinkInterval = setInterval(blinkCell.bind(null, currentCell), 800);
-      break;
-    case 5:
-      currentCell=map.rows[3].cells[2];
-      currentCell.style.display="block";
-      blinkInterval = setInterval(blinkCell.bind(null, currentCell), 800);
-      break;
-    case 6:
-      currentCell=map.rows[3].cells[3];
-      currentCell.style.display="block";
-      blinkInterval = setInterval(blinkCell.bind(null, currentCell), 800);
-      break;
-  }
 }
 
-function blinkCell(currentCell) {
-
-  if (currentCell.style.backgroundColor=="black") {
-    currentCell.style.backgroundColor="gray";
-  } else {
-    currentCell.style.backgroundColor="black";
-  }
-
-  
-}
