@@ -990,25 +990,6 @@ function potionButton() {
       }
     }, false);
 }
-  /*var but1=document.createElement("button");
-  var parBut=document.createElement("p");
-  parBut.appendChild(but1);
-  but1.innerHTML=">";
-  but1.id='fwdButn';
-  parBut.style.textAlign="center";
-  but1.addEventListener('click', function() { 
-    textBox.innerHTML="From across the door, the wizard mumbles: 'In order to live, you'll have  to defeat the numerous monsters that inhabit this dark place. Search the key. If you can obtain it, you are free to leave.'"; 
-    document.getElementById("movebtn").disabled = false;
-    document.getElementById("lookbtn").disabled = false;
-    document.getElementById("restbtn").disabled = false;
-    document.getElementById("takebtn").disabled = false;
-    document.getElementById("inventorybtn").disabled = false;
-    document.getElementById("statusbtn").disabled = false;
-  }, false);
-  textBox.appendChild(parBut);
-  }
-  */
-
 
 function gameOver() {
   document.getElementById("movebtn").disabled = true;
